@@ -1,13 +1,9 @@
-- name: Deploy app
-  hosts: web
-  become: yes
-  tasks:
-    - name: Install nginx
-      apt:
-        name: nginx
-        state: present
 
-    - name: Start nginx
-      service:
-        name: nginx
-        state: started
+- name: Ansible from Jenkins
+  hosts: local
+  become: false
+  tasks:
+    - name: Say hi
+      debug:
+        msg: "Ansible ran successfully from Jenkins 🚀"
+
